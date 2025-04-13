@@ -7,7 +7,7 @@ By default, the `gatlingRun` task runs in interactive mode and suggests the simu
 
 ### To run a simulation 
 Linux/MacOS:  
-`./gradlew gatlingRun`
+`./gradlew gatlingRun`  
 Windows:  
 `gradlew.bat gatlingRun`
 
@@ -19,7 +19,7 @@ Windows:
 
 ### To run all simulations
 Linux/MacOS:  
-`./gradlew gatlingRun --all`
+`./gradlew gatlingRun --all`  
 Windows:  
 `gradlew.bat gatlingRun --all`
 
