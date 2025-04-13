@@ -1,0 +1,19 @@
+[
+  {
+    "firstName": "JohnLow",
+    "lastName": "Doe",
+    "dateOfBirth": "1990-01-01",
+    "gender": "MALE",
+    "emailAddress": "john.doe234@example.com",
+    "phoneNumber": "1234567890",
+    "address": "123 Main St",
+    "city": "Singapore",
+    "state": "Singapore",
+    "country": "Singapore",
+    "postalCode": "123456",
+    "nric": "S1234569A",
+    "agentId": "10087137-a342-417e-8123-22c5e61280d4",
+    "accounts": []
+  }
+]
+  
