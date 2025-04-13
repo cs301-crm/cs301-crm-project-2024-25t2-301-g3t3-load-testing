@@ -6,20 +6,20 @@ By default, the `gatlingRun` task runs in interactive mode and suggests the simu
 * or the Simulation class is forced with the `--simulation=<FullyQualifiedClassName>` option,
 
 ### To run a simulation 
-Linux/MacOS
+Linux/MacOS:  
 `./gradlew gatlingRun`
-Windows
+Windows:  
 `gradlew.bat gatlingRun`
 
 ### To run a single simulation by its FQN (fully qualifed class name)
-Linux/MacOS
-`./gradlew gatlingRun --simulation com.project.simu.MySimulation`
-Windows
+Linux/MacOS:  
+`./gradlew gatlingRun --simulation com.project.simu.MySimulation`  
+Windows:  
 `gradlew.bat gatlingRun --simulation com.project.simu.MySimulation`
 
 ### To run all simulations
-Linux/MacOS
+Linux/MacOS:  
 `./gradlew gatlingRun --all`
-Windows
+Windows:  
 `gradlew.bat gatlingRun --all`
 
