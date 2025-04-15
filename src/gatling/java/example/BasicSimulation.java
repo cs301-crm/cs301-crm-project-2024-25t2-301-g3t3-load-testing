@@ -18,8 +18,7 @@ public class BasicSimulation extends Simulation {
                   .userAgentHeader(
                           "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36");
 
-  // Define scenario
-//  ScenarioBuilder scenario = scenario("Scenario").exec(http("Session").get("/session"));
+  // Define login scenario
   ScenarioBuilder loginScenario = scenario("Login with OTP")
           .exitBlockOnFail()
           .on(
@@ -27,15 +26,43 @@ public class BasicSimulation extends Simulation {
           )
           .exitHereIfFailed();
 
+  // Define create scenario
   ScenarioBuilder createClientScenario = scenario("Create Client")
           .exitBlockOnFail()
           .on(
                   authenticate,
                   pause(minPauseSec, maxPauseSec),
                   createClients
-//                  session -> {
-//                      System.out.println("JWT: " + session.getString("JWT_TOKEN"));
-//                  }
+          )
+          .exitHereIfFailed();
+
+  // Define read scenario
+  ScenarioBuilder readClientScenario = scenario("Read Client")
+          .exitBlockOnFail()
+          .on(
+                  authenticate,
+                  pause(minPauseSec, maxPauseSec),
+                  createClients
+          )
+          .exitHereIfFailed();
+
+  // Define update scenario
+  ScenarioBuilder updateClientScenario = scenario("Update Client")
+          .exitBlockOnFail()
+          .on(
+                  authenticate,
+                  pause(minPauseSec, maxPauseSec),
+                  createClients
+          )
+          .exitHereIfFailed();
+
+  // Define delete scenario
+  ScenarioBuilder deleteClientScenario = scenario("Delete Client")
+          .exitBlockOnFail()
+          .on(
+                  authenticate,
+                  pause(minPauseSec, maxPauseSec),
+                  createClients
           )
           .exitHereIfFailed();
 

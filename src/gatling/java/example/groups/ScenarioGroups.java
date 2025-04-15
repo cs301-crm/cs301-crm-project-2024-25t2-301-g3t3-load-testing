@@ -8,6 +8,8 @@ import static io.gatling.javaapi.core.CoreDsl.*;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sun.net.httpserver.Filter;
+import example.endpoints.APIendpoints;
 import io.gatling.javaapi.core.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,3 +42,28 @@ public class ScenarioGroups {
                             pause(minPauseSec, maxPauseSec),
                             createClient
                     );
+
+    public static final ChainBuilder readClients =
+            group("read")
+                    .on(
+                            feed(clientsFeeder),
+                            pause(minPauseSec, maxPauseSec),
+                            readAllClient
+                    );
+
+    public static final ChainBuilder updateClients =
+        group("updated")
+                .on(
+                        feed(clientsFeeder),
+                        pause(minPauseSec, maxPauseSec),
+                        updateClient
+                );
+
+    public static final ChainBuilder deleteClients =
+            group("deleted")
+                    .on(
+                            feed(clientsFeeder),
+                            pause(minPauseSec, maxPauseSec),
+                            deleteCLient
+                    );
+}
